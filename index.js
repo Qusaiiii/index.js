@@ -69,6 +69,14 @@ client.on('message', message => {
 
         if (uptime >= 8.64e+7) {
 
+            days++;
+            uptime -= 8.64e+7;
+
+        } else if (uptime >= 3.6e+6) {
+
+            hours++;
+            uptime -= 3.6e+6;
+
         } else if (uptime >= 60000) {
 
             minutes++;
@@ -204,16 +212,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
     }
 });
-            days++;
-            uptime -= 8.64e+7;
 
-        } else if (uptime >= 3.6e+6) {
+client.login(process.env.BOT_TOKEN);
 
-            hours++;
-            uptime -= 3.6e+6;
-
-		
-client.login(process.env.BOT_TOKEN)
-
-		
 var prefix = '/'
