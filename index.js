@@ -374,23 +374,27 @@ client.on('message', message => {
         }
 });
 
-
 client.on('message', message => {
-              if (!message.channel.guild) return;
-      if(message.content =='member')
-      var IzRo = new Discord.RichEmbed()
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('🌷| Members info')
-      .addBlankField(true)
-      .addField('📗| Online',
-      `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
-      .addField('📕| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
-      .addField('📙| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
-      .addField('📓| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('➡| Server Members',`${message.guild.memberCount}`)
-      message.channel.send(IzRo);
-    });
+  var prefix = "/";
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = message.content.split(" ").slice(1);
+  if (command == "kick") {
+      if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('You Dont Have **KICK_MEMBERS** Permission!');
+        var member= message.mentions.members.first();
+        member.kick().then((member) => {
+            message.channel.send(member.displayName + " Kicked From " + message.guild.name);
+            message.channel.send("By: " + "<@" + message.author.id + ">")
+            message.channel.sendMessage(`تم حفظ السبب وستتم مراجعته من قبل الأونر`)
+client.channels.get(`ID Chat admin`).sendMessage("** تم طرد هذا الشخص من قبل " + message.guild.owner + " سبب مذكور **" + args.join("  "))
+        }).catch(() => {
+            message.channel.send(`:x: I cant kick this member`);
+        });
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);
