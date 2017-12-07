@@ -165,10 +165,12 @@ __~~Peery Bot~~__ By **Peery#0609
 /invite
 /clear
 /ping
+/avatar
 /dog
 /server
 /uptime
 /roll
+/bc
 /invs
 /staff
 **
