@@ -232,7 +232,10 @@ message.channel.send('**تم الارسال في الخاص**');
 });
 
 
-client.user.setGame("/help","https://twitch.tv/peery13")
+client.on("ready", () => {
+  const Games = [`/help`]
+  setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
+});
 
 
 client.login(process.env.BOT_TOKEN);
