@@ -216,7 +216,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "staff") {
+     if (message.content === prefix + "invite") {
 
 
  message.author.sendMessage(`
