@@ -166,6 +166,8 @@ __~~Peery Bot~~__ By **Peery#0609
 /clear
 /ping
 /dog
+/ban
+/kick
 /server
 /uptime
 /roll
@@ -393,6 +395,16 @@ client.channels.get(`ID Chat admin`).sendMessage("** تم طرد هذا الشخ
         }).catch(() => {
             message.channel.send(`:x: I cant kick this member`);
         });
+    }
+});
+
+
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('discord.gg')){
+      if(!message.member.hasPermission('ADMINISTRATOR'))
+        message.delete()
+    return message.reply(`** No Invite Links here **`)
     }
 });
 
