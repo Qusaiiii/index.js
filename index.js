@@ -152,9 +152,11 @@ __~~Peery Bot~~__ By **Peery#0609
 **
 ●  Bot commands: ● 
 /perm
+/message <player> <msg>
 /invite
 /clear
 /ping
+/server
 /uptime
 /roll
 /invs
@@ -292,6 +294,22 @@ if(command === `${prefix}message`) {
     toSend.send({embed:xFive});
     message.reply("** :white_check_mark: , Sent a Message to **<@"+toSend.id+">")
  }
+});
+
+
+client.on("guildCreate", guild => {
+client.channels.get("RoomID").send(`The's bot (BotName) has been **added** ❤ from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
+});
+
+client.on("guildDelete", guild => {
+client.channels.get("RoomID").send(`The's bot (BotName) has been **removed** 😔 from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
+});
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
+      guild.owner.send(embed)
 });
 
 
