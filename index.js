@@ -231,6 +231,8 @@ message.channel.send('**تم الارسال في الخاص**');
     }
 });
 
+client.setGame("/help","https://twitch.tv/peery13")
+
 
 client.login(process.env.BOT_TOKEN);
 
