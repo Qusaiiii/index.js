@@ -11,20 +11,6 @@ client.on('message', msg => {
   }
 });
 
-
-const Discord = require("discord.js");
-const client = new Discord.Client();
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
 client.on('message', function(message) {
     if (message.author.bot) return;
     if (message.author.id === client.user.id) return;
@@ -226,8 +212,8 @@ message.channel.send('**تم الارسال في الخاص**');
             hours++;
             uptime -= 3.6e+6;
 
-
-var prefix = '/'
-
-
+		
 client.login(process.env.BOT_TOKEN)
+
+		
+var prefix = '/'
