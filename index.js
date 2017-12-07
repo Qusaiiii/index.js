@@ -151,7 +151,8 @@ client.on('message', message => {
 __~~Peery Bot~~__ By **Peery#0609
 **
 ●  Bot commands: ● 
-/perm  
+/perm
+/invite
 /clear
 /ping
 /uptime
@@ -209,6 +210,18 @@ https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&p
 `);
 
 message.channel.send('**تم الارسال في الخاص**');
+
+    }
+});
+
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "invite") {
+
+
+ message.author.sendMessage(`
+**ب**امكانك دعوة البوت الى سيرفرك عن طريق الرابط
+https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
 
     }
 });
