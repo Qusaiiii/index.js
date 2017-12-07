@@ -216,15 +216,21 @@ message.channel.send('**تم الارسال في الخاص**');
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "invite") {
+     if (message.content === prefix + "staff") {
 
 
  message.author.sendMessage(`
-**ب**امكانك دعوة البوت الى سيرفرك عن طريق الرابط
+ 
+بامكانك دعوة البوت من هنا
+
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
+`);
+
+message.channel.send('**تم الارسال في الخاص**');
 
     }
 });
+
 
 client.login(process.env.BOT_TOKEN);
 
