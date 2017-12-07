@@ -315,7 +315,6 @@ client.on('guildCreate', guild => {
 
 
 const Dog = [    "https://i.imgur.com/xhcCg7a.jpg",    "https://i.imgur.com/XMPh4JW.jpg",    "https://i.imgur.com/aArK2iB.jpg",    "https://i.imgur.com/mT9QBVd.jpg",    "https://i.imgur.com/77L3O3j.jpg",    "https://i.imgur.com/h9vW5Ul.jpg",    "https://i.imgur.com/ZgFwtCJ.jpg",  "https://i.imgur.com/EzPOGXv.jpg",  "https://i.imgur.com/MfdfllP.jpg",  "https://i.imgur.com/am0IK2X.jpg",]
-
 bot.on('message', message => {
     if (message.content.startsWith(prefix + 'dog')) {
      message.channel.sendFile(Dog[Math.floor(Math.random() * Dog.length)]);
