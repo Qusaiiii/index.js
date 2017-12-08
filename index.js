@@ -159,22 +159,23 @@ __~~The King Bot~~__ By King OF Game Server
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
 **
 ●  Bot commands: ● 
-/perm | your role permissions.
-/message <player> <msg> | to message player from server to private from the bot
-/invite | to invite bot to your server.
-/clear | clear chat
-/ser-av | server avatar
-/bot | informations bot
-/ping | your ping
-/mute <mention>  | to mute player
-/unmute <mention> | to unmute player
-/kick <mention> <reason> | to kick player
-/server | informations about server
-/uptime | to see uptime
-/roll | roll
-/bc <message> | to message all server members
-/invs | link your server invite
-/staff | to see staff bot
+*perm | your role permissions.
+*message <player> <msg> | to message player from the bot
+*invite | to invite bot to your server.
+*clear | clear chat
+*ser-av| server avatar
+*bot | informations bot
+*ping | your ping
+*mute <mention>  | to mute player
+*unmute <mention> | to unmute player
+*kick <mention> <reason> | to kick player
+*server | informations about server
+*uptime | to see uptime
+*roll | roll
+*bc <message> | to message all server members
+*invs | link your server invite
+*staff | to see staff bot
+*ban | ban member from your server
 **
 =======================================================================================
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
@@ -398,7 +399,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  var prefix = "/";
+  var prefix = "*";
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
