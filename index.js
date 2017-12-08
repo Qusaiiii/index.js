@@ -159,22 +159,22 @@ __~~The King Bot~~__ By King OF Game Server
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
 
 ●  Bot commands: ● 
-*perm | your role permissions.
-*message <player> <msg> | to message player from the bot
-*invite | to invite bot to your server.
-*clear | clear chat
-*ser-av| __server avatar__
-*bot | __informations bot__
-*ping | __your ping__
-*mute <mention>  | __to mute player
-*unmute <mention> | to unmute player
-*kick <mention> <reason> | to kick player
-*server | informations about server
-*uptime | to see uptime
-*roll | roll
-*bc <message> | to message all server members
-*invs | link your server invite
-*staff | __to see staff bot__
+*perm | **your role permissions**
+*message <player> <msg> | **message player from the bot**
+*invite | **invite bot to your server**
+*clear | **clear chat**
+*ser-av| **server avatar**
+*bot | **informations bot**
+*ping | **your ping**
+*mute <mention>  | **mute player**
+*unmute <mention> | **unmute player**
+*kick <mention> | **kick player**
+*server | **informations about server**
+*uptime | **to see uptime**
+*roll | **roll**
+*bc <message> | **to message all server members**
+*invs | **link your server invite**
+*staff | **staff bot**
 =======================================================================================
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
 =============================================================================================
@@ -405,7 +405,7 @@ client.on("message", message => {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
                   if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
-  let modlog = client.channels.find('name', 'logs');
+  let modlog = client.channels.find('name', 'console');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
   if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").catch(console.error);
   if (!modlog) return message.reply("**لا يوجد الروم المراد ارسال المعلومات له 'Mute-Log'**");
@@ -433,7 +433,7 @@ client.on("message", message => {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
-  let modlog = client.channels.find('name', 'logs');
+  let modlog = client.channels.find('name', 'console');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
   if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **");
   if (!modlog) return message.reply("**لا يوجد الروم المراد ارسال المعلومات له 'Mute-Log'**");
