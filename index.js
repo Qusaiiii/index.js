@@ -503,7 +503,7 @@ client.on("message", message => {
   
       .setTitle(`صورة ** ${message.guild.name} **`)
   .setAuthor(message.author.username, message.guild.iconrURL)
-    .setColor(RANDOM)
+    .setColor('RANDOM')
     .setImage(message.guild.iconURL)
 
    message.channel.send({embed});
@@ -515,7 +515,7 @@ client.on('message', message => {
      if (message.content === "/bot") {
             if(!message.channel.guild) return message.reply('** This command only for servers **');
      let embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
+  .setColor('RANDOM')
   .addField("**عدد السيرفرات الي فيها البوت:**" , client.guilds.size)
   .addField("**المستخدمين:**", client.users.size)
   .addField("**قنوات:**", client.channels.size)
