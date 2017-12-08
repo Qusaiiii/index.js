@@ -149,15 +149,7 @@ client.on('message', message => {
  message.author.sendMessage(`
  **
 __~~The King Bot~~__ By King OF Game Server
-
-╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╭━━╮╱╱╱╭╮
-┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
-┃╰━╯┣━━┳━━┳━┳╮╱╭╮┃╰╯╰┳━┻╮╭╯
-┃╭━━┫┃━┫┃━┫╭┫┃╱┃┃┃╭━╮┃╭╮┃┃
-┃┃╱╱┃┃━┫┃━┫┃┃╰━╯┃┃╰━╯┃╰╯┃╰╮
-╰╯╱╱╰━━┻━━┻╯╰━╮╭╯╰━━━┻━━┻━╯
-╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
-╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+King Bot
 **
 ●  Bot commands: ● 
 /perm | your role permissions.
