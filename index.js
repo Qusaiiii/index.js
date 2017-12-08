@@ -164,6 +164,8 @@ __~~Peery Bot~~__ By **Peery#0609
 /message <player> <msg>
 /invite
 /clear
+/ser-av
+/bot
 /ping
 /mute <mention>  
 /unmute <mention> 
