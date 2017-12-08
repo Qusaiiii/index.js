@@ -412,6 +412,151 @@ m.sendMessage(args)
 })
     
 
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const yt = require('ytdl-core');
+client.on('message', message => {
+  if (message.content.startsWith('$$play.1')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`Please be in a voice channel first!`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=mxUsXAwur5o&t=6s", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.1')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=vqqvpP8TVfk&t=88s", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.2')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=qFq5h4wtjaM&t=30s", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.3')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=mxUsXAwur5o&t=6s", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.4')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=LTRcg-gR78o", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.5')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=6Hzk5uPDaJk", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.6')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=g46yT-neUnw", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith('$$play.7')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=g46yT-neUnw", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+  }
+});
+
+
+client.on("message", message => {
+ if (message.content === "$$قرأن") {
+
+  const embed = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(` 
+     🕋 اوامر بوت القرآن الكريم 🕋
+
+🎙$$play.1 سورة البقرة كاملة عبد الباسط عبد الصمد🗣
+🎙$$play.2 سورة البقرة كاملة للشيخ مشاري العفاسي🗣
+🎙$$play.3 سورة الكهف كاملة بصوت مشارى بن راشد العفاسي🗣
+🎙$$play.4 سورة الفاتحه بصوت الشيخ عبد الباسط عبد الصمد🗣
+🎙$$play.5 سورة يس كاملة للشيخ مشاري بن راشد العفاسي🗣
+🎙$$play.6 سورة الواقعه بصوت الشيخ مشاري بن راشد العفاسي🗣
+🎙$$play.7 سورة يوسف بصوت الشيخ مشاري بن راشد العفاسي🗣
+
+`)
+
+
+message.channel.sendEmbed(embed)
+
+}
+}); 
+
+client.on("message", message => {
+  if(message.content === "#stop" ) {
+                  var servers = {};
+
+            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+    
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
 
 
