@@ -148,7 +148,7 @@ client.on('message', message => {
 
  message.author.sendMessage(`
  **
-__~~Peery Bot~~__ By **Peery#0609
+__~~The King Bot~~__ By King OF Game Server
 
 ╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╭━━╮╱╱╱╭╮
 ┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
@@ -226,7 +226,7 @@ client.on('message', message => {
 ╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
  
-__Owner__: Peery#0609
+__Owner__: Kinf OF Game Server
 
 __Thanks__: Dnager ᴿᵉˣ , ˣ₄#1865 / !「H E R O ˣ₄」ᴿᵉˣ , ๖ۣۜŦⱢ༻#1318
 
@@ -540,4 +540,4 @@ m.sendMessage(args)
 
 client.login(process.env.BOT_TOKEN);
 
-var prefix = '/'
+var prefix = '*'
