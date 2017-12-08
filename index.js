@@ -133,7 +133,7 @@ __~~The King Bot~~__ By King OF Game Server
 *invs | **your server invite link**
 *staff | **staff bot**
 =======================================================================================
-https://discord.gg/4qpRqE2
+Server Support : https://discord.gg/4qpRqE2
 =======================================================================================
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
 =============================================================================================
@@ -185,7 +185,7 @@ client.on('message', message => {
  __Powered By__: King Of Game Team
 
 
-https://discord.gg/4qpRqE2
+Server Support : https://discord.gg/4qpRqE2
 
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
 `);
@@ -214,8 +214,8 @@ client.on('message', message => {
 بامكانك دعوة البوت من هنا
 
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
-server
-https://discord.gg/4qpRqE2
+
+Server Support : https://discord.gg/4qpRqE2
 `);
 
 message.channel.send('**تم الارسال في الخاص**');
