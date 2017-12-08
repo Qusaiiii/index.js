@@ -294,45 +294,6 @@ client.on('message', function(msg) {
   });
 
 
-client.on("message", function(message) {
- if(message.author.bot) return;
- if(message.channel.type === "dm") return;
-let messageArray = message.content.split(" ");
-let command = messageArray[0];
-let args = message.content.split(" ").slice(2);
-let toSend = message.mentions.users.first();
-        
-         var currentTime = new Date(),
-          hours = currentTime.getHours() ,
-          minutes = currentTime.getMinutes(),
-          Year = currentTime.getFullYear() - 2000,
-          Month = currentTime.getMonth() + 1,
-          Day = currentTime.getDate();
-          var suffix = 'AM';
-          if (hours >= 12) {
-             suffix = 'PM';
-              hours = hours - 12;
-         }
-          if (hours == 0) {
-              hours = 12;
-          }
-let xFive = new Discord.RichEmbed()
-    .setColor("ORANGE")
-    .setAuthor(message.author.username,message.author.avatarURL)
-    .setThumbnail(message.author.avatarURL)
-    .setFooter("SenioR TeaM. || "+"- "+Month+"."+Year+"."+Day+" -"+hours+":"+minutes+" "+suffix)
-    .addField("Message","**"+args+"**")
-if(command === `${prefix}message`) {
-    if(toSend.bot) return message.reply("**# You cannot send a message to a bot!** :sparkler:");
-    if(args < 1) return message.reply("**# Please , Specify a valid arguments!** :sparkler:");
-    toSend.send({embed:xFive});
-    message.reply("** :white_check_mark: , Sent a Message to **<@"+toSend.id+">")
- }
-});
-
-
-
-
 client.on('message', message => {
         if (message.author.id === client.user.id) return;
         if (message.guild) {
@@ -503,6 +464,73 @@ m.sendMessage(args)
 })
 }
 })
+
+
+client.on('message', message => {
+  if (true) {
+if (message.content === '*support') {
+      message.author.send('رابط السيرفر').catch(e => console.log(e.stack));
+
+    }
+   } 
+  });
+client.on('message', message => {
+     if (message.content === "*support") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+               .setFooter(اسم بوتك, 'صورت بوتك)
+  .addField("Done" , " تــــم ارســالك في الخــاص")
+
+
+
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+client.on('message', function(message) {
+    if (message.author.bot) return;
+    if (message.author.id === client.user.id) return;
+    if (message.author.equals(client.user)) return;
+    if (!message.content.startsWith(prefix)) return;
+
+    var args = message.content.substring(prefix.length).split(' ');
+
+    switch (args[0].toLocaleLowerCase()) {
+          case "clear" :
+if(!message.channel.guild) return
+                                if(message.member.hasPermissions(0x2000)){ if (!args[1]) {
+        message.channel.fetchMessages()
+          .then(messages => {
+            message.channel.bulkDelete(messages);
+       var     messagesDeleted = messages.array().length;
+             var embed = new Discord.RichEmbed()
+             .setDescription('message Deleted ' + messagesDeleted)
+             .setColor('RANDOM')
+            message.channel.sendEmbed(embed);
+          })
+                            } else {
+                            let messagecount = parseInt(args[1]);
+        message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                  let clear = new Discord.RichEmbed()
+                  
+                                                   .setColor('RANDOM')
+             .setDescription('Messages Deleted ' + args[1])
+             message.channel.sendEmbed(clear)
+                                                                                        message.delete(10000);
+               }
+                    } else {
+                        var manage = new Discord.RichEmbed()
+                        .setDescription('You Do Not Have Permission `MANAGE_MESSAGES')
+                        .setColor("RANDOM")
+                        message.channel.sendEmbed(manage)
+                        return;
+                    }
+break;
+
+}
+});    
 
 
 client.login(process.env.BOT_TOKEN);
