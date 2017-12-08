@@ -157,8 +157,8 @@ __~~The King Bot~~__ By King OF Game Server
 ╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
-
-●  Bot commands: ● 
+● Bot Prefix: ' * ' ●
+●  Bot commands: ●
 *perm | **your role permissions**
 *message <player> <msg> | **message player from the bot**
 *invite | **invite bot to your server**
