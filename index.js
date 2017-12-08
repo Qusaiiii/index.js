@@ -225,7 +225,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
 
 client.on("ready", () => {
-  const Games = [`*help`]
+  const Games = [`*help | *invite`]
   setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
 });
 
