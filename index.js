@@ -537,6 +537,8 @@ m.sendMessage(args)
 }
 })
 
+client.user.setGame('/help',`https://www.twitch.tv/`);
+
 
 client.login(process.env.BOT_TOKEN);
 
