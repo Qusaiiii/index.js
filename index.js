@@ -160,22 +160,22 @@ __~~Peery Bot~~__ By **Peery#0609
 ╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
 **
 ●  Bot commands: ● 
-/perm
-/message <player> <msg>
-/invite
-/clear
-/ser-av
-/bot
-/ping
-/mute <mention>  
-/unmute <mention> 
-/kick <mention> <reason>
-/server
-/uptime
-/roll
-/bc <message>
-/invs
-/staff
+/perm | your role permissions.
+/message <player> <msg> | to message player from server to private from the bot
+/invite | to invite bot to your server.
+/clear | clear chat
+/ser-av | server avatar
+/bot | informations bot
+/ping | your ping
+/mute <mention>  | to mute player
+/unmute <mention> | to unmute player
+/kick <mention> <reason> | to kick player
+/server | informations about server
+/uptime | to see uptime
+/roll | roll
+/bc <message> | to message all server members
+/invs | link your server invite
+/staff | to see staff bot
 **
 =======================================================================================
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
