@@ -526,6 +526,17 @@ message.channel.sendEmbed(embed);
     }
 });
 
+client.on('message', message => {
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('/bc-users')){
+ if(!message.author.id === '324672376455299074') return;
+message.channel.sendMessage('تم , جار أرسال الرسالة')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+})
+
 
 client.login(process.env.BOT_TOKEN);
 
