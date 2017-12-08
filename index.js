@@ -474,19 +474,6 @@ if (message.content === '*support') {
     }
    } 
   });
-client.on('message', message => {
-     if (message.content === "*support") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-               .setFooter(اسم بوتك, 'صورت بوتك)
-  .addField("Done" , " تــــم ارســالك في الخــاص")
-
-
-
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 client.on('message', function(message) {
