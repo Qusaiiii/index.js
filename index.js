@@ -309,16 +309,6 @@ client.channels.get(`ID Chat admin`).sendMessage("** تم طرد هذا الشخ
 });
 
 
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('discord.gg')){
-      if(!message.member.hasPermission('ADMINISTRATOR'))
-        message.delete()
-    return message.reply(`** No Invite Links here **`)
-    }
-});
-
-
 client.on("message", message => {
   let command = message.content.split(" ")[0];
   if (command === "*mute") {
