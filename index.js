@@ -398,29 +398,6 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-  var prefix = "*";
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = message.content.split(" ").slice(1);
-  if (command == "ban") {
-      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('You Dont Have **BAN_MEMBERS** Permission!');
-        var member= message.mentions.members.first();
-        member.ban().then((member) => {
-            message.channel.send(member.displayName + " Kicked From " + message.guild.name);
-            message.channel.send("By: " + "<@" + message.author.id + ">")
-            message.channel.sendMessage(`تم حفظ السبب وستتم مراجعته من قبل الأونر`)
-client.channels.get(`ID chat admin`).sendMessage("** تم باند هذا الشخص من قبل " + message.guild.owner + " سبب مذكور **" + args.join("  "))
-        }).catch(() => {
-            message.channel.send(`:x: I cant kick this member`);
-        });
-    }
-});
-
-
 client.on("message", message => {
   let command = message.content.split(" ")[0];
   if (command === "/mute") {
