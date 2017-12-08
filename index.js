@@ -265,7 +265,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
 
 client.on("ready", () => {
-  const Games = [`/help`]
+  const Games = [`*help`]
   setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
 });
 
@@ -411,7 +411,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  var prefix = "$";
+  var prefix = "/";
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
