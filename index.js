@@ -135,7 +135,7 @@ __~~The King Bot~~__ By King OF Game Server
 =======================================================================================
 Server Support : https://discord.gg/4qpRqE2
 =======================================================================================
-https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
+https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
 =============================================================================================
 `);
 
@@ -187,7 +187,7 @@ client.on('message', message => {
 
 Server Support : https://discord.gg/4qpRqE2
 
-https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
+https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
 `);
 
 message.channel.send('**تم الارسال في الخاص**');
@@ -213,7 +213,7 @@ client.on('message', message => {
  
 بامكانك دعوة البوت من هنا
 
-https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
+https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
 
 Server Support : https://discord.gg/4qpRqE2
 `);
