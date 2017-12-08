@@ -225,7 +225,7 @@ client.on('message', message => {
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
  
-__Owner__: Kinf OF Game Server
+__Owner__: King OF Game Server
 
 __Thanks__: Dnager ᴿᵉˣ , ˣ₄#1865 / !「H E R O ˣ₄」ᴿᵉˣ , ๖ۣۜŦⱢ༻#1318
 
