@@ -495,6 +495,22 @@ client.on("message", message => {
 });
 
 
+client.on("message", message => {    
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === "/ser-av"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`صورة ** ${message.guild.name} **`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor(RANDOM)
+    .setImage(message.guild.iconURL)
+
+   message.channel.send({embed});
+      }
+  });
+
+
 client.login(process.env.BOT_TOKEN);
 
 var prefix = '/'
