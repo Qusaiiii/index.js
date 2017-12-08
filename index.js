@@ -130,7 +130,7 @@ __~~The King Bot~~__ By King OF Game Server
 *uptime | **to see uptime**
 *roll | **roll**
 *bc <message> | **to message all server members**
-*invs | **link your server invite**
+*invs | **your server invite link**
 *staff | **staff bot**
 =======================================================================================
 https://discord.gg/4qpRqE2
