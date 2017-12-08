@@ -403,7 +403,7 @@ client.on('message', message => {
 
 client.on("message", message => {
   let command = message.content.split(" ")[0];
-  if (command === "/mute") {
+  if (command === "*mute") {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
                   if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
@@ -431,7 +431,7 @@ client.on("message", message => {
   }
 
 };
-    if (command === "/unmute") {
+    if (command === "*unmute") {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
@@ -467,7 +467,7 @@ client.on("message", message => {
 client.on("message", message => {    
           if(!message.channel.guild) return;
    if(message.author.bot) return;
-      if(message.content === "/ser-av"){ 
+      if(message.content === "*ser-av"){ 
           const embed = new Discord.RichEmbed()
   
       .setTitle(`صورة ** ${message.guild.name} **`)
@@ -481,7 +481,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-     if (message.content === "/bot") {
+     if (message.content === "*bot") {
             if(!message.channel.guild) return message.reply('** This command only for servers **');
      let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
