@@ -182,9 +182,8 @@ client.on('message', message => {
 ╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
- __Powered By__: Peery#0609
+ __Powered By__: King Of Game Team
 
-__Owner__: King OF Game Server
 
 https://discord.gg/4qpRqE2
 
