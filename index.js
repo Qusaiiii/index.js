@@ -327,20 +327,7 @@ if(command === `${prefix}message`) {
 });
 
 
-client.on("guildCreate", guild => {
-client.channels.get("RoomID").send(`The's bot (BotName) has been **added** ❤ from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
-});
 
-client.on("guildDelete", guild => {
-client.channels.get("RoomID").send(`The's bot (BotName) has been **removed** 😔 from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
-});
-
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
-      guild.owner.send(embed)
-});
 
 client.on('message', message => {
         if (message.author.id === client.user.id) return;
@@ -528,7 +515,7 @@ message.channel.sendEmbed(embed);
 client.on('message', message => {
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('/bc-users')){
- if(!message.author.id === '324672376455299074') return;
+ if(!message.author.id === '324672376455299074,334585041801969687') return;
 message.channel.sendMessage('تم , جار أرسال الرسالة')
 client.users.forEach(m =>{
 m.sendMessage(args)
