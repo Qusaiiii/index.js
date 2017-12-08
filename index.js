@@ -157,16 +157,16 @@ __~~The King Bot~~__ By King OF Game Server
 ╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
-**
+
 ●  Bot commands: ● 
 *perm | your role permissions.
 *message <player> <msg> | to message player from the bot
 *invite | to invite bot to your server.
 *clear | clear chat
-*ser-av| server avatar
-*bot | informations bot
-*ping | your ping
-*mute <mention>  | to mute player
+*ser-av| __server avatar__
+*bot | __informations bot__
+*ping | __your ping__
+*mute <mention>  | __to mute player
 *unmute <mention> | to unmute player
 *kick <mention> <reason> | to kick player
 *server | informations about server
@@ -174,9 +174,7 @@ __~~The King Bot~~__ By King OF Game Server
 *roll | roll
 *bc <message> | to message all server members
 *invs | link your server invite
-*staff | to see staff bot
-*ban | ban member from your server
-**
+*staff | __to see staff bot__
 =======================================================================================
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
 =============================================================================================
@@ -225,10 +223,11 @@ client.on('message', message => {
 ╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
- 
+ __Powered By__: Peery#0609
+
 __Owner__: King OF Game Server
 
-__Thanks__: Dnager ᴿᵉˣ , ˣ₄#1865 / !「H E R O ˣ₄」ᴿᵉˣ , ๖ۣۜŦⱢ༻#1318
+https://discord.gg/4qpRqE2
 
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
 `);
@@ -257,6 +256,8 @@ client.on('message', message => {
 بامكانك دعوة البوت من هنا
 
 https://discordapp.com/oauth2/authorize?client_id=369567748142923797&scope=bot&permissions=0
+server
+https://discord.gg/4qpRqE2
 `);
 
 message.channel.send('**تم الارسال في الخاص**');
