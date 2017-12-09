@@ -142,7 +142,6 @@ __~~The King Bot~~__ By King OF Game Team
 *perm | **your role permissions**
 *message <player> <msg> | **message player from the bot**
 *invite | **invite bot to your server**
-*clear | **clear chat**
 *ser-av| **server avatar**
 *bot | **informations bot**
 *ping | **your ping**
