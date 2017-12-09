@@ -105,7 +105,7 @@ client.on('message', message => {
 
  message.author.sendMessage(`
  **
-__~~The King Bot~~__ By King OF Game Server
+__~~The King Bot~~__ By King OF Game Team
 ╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
 ╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
 ╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
