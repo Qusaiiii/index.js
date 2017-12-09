@@ -20,14 +20,6 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
-  if (msg.content ==='hi') {
-    msg.reply('RANDOM');
-  }
-});
-
-
-
-client.on('message', msg => {
   if (msg.content === 'The King Bot') {
     msg.reply('Hi, what you need? if u need help do: *help');
   }
