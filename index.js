@@ -12,6 +12,13 @@ client.on('message', msg => {
 });
 
 
+client.on('message', msg => {
+  if (msg.content === ':robot:') {
+    msg.reply('Hi, what you need? if u need help do: *help');
+  }
+});
+
+
 client.on('message', message => {
         if (message.content.startsWith(prefix + "uptime")) {
     let uptime = client.uptime;
