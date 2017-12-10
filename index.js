@@ -299,7 +299,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
 
 client.on("ready", () => {
-  const Games = [`*help | *invite``https://www.twitch.tv/peery13']
+  const Games = [`*help | *invite']
   setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
 });
 
