@@ -151,6 +151,8 @@ __~~The King Bot~~__ By King OF Game Team
 *server | **informations about server**
 *uptime | **to see uptime**
 *roll | **roll**
+*help.ar | **commands in arabic**
+*help.us | **commands in english**
 *bc <message> | **to message all server members**
 *invs | **your server invite link**
 *staff | **staff bot**
