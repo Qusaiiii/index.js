@@ -522,7 +522,7 @@ if(command === `${prefix}message`) {
  }
 });
 
-bot.on('message', message => {
+client.on('message', message => {
     if (message.content.startsWith("*stats")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
