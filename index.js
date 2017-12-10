@@ -120,7 +120,7 @@ client.on('message', function(message) {
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help.us") {
-		 message.channel.send('**The Message Was Send On Prevate**');
+		 message.channel.send('**The Message Was Sent On Private**');
             
 	
 		 
@@ -137,7 +137,7 @@ __~~The King Bot~~__ By King OF Game Team
 ╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
-● Bot Prefix: \` * \` ●
+● Bot Prefix: ' * ' ●
 ●  Bot commands: ●
 *perm | **your role permissions**
 *message <player> <msg> | **message player from the bot**
