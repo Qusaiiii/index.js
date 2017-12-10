@@ -119,8 +119,56 @@ client.on('message', function(message) {
 	
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "help") {
-		 message.channel.send('**تم ارسال الاوامر في الخاص**');
+     if (message.content === prefix + "help.us") {
+		 message.channel.send('**The Message Was Send On Prevate**');
+            
+	
+		 
+
+
+ message.author.sendMessage(`
+ **
+__~~The King Bot~~__ By King OF Game Team
+╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
+╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
+╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
+╱┃┃┃╭╮┃┃━┫╭╮┃┣┫╭╮┫╭╮┃╭━╮┃╭╮┃┃
+╱┃╰┫┃┃┃┃━┫┃┃╰┫┃┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
+╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+● Bot Prefix: \` * \` ●
+●  Bot commands: ●
+*perm | **your role permissions**
+*message <player> <msg> | **message player from the bot**
+*invite | **invite bot to your server**
+*ser-av| **server avatar**
+*bot | **informations bot**
+*ping | **your ping**
+*mute <mention>  | **mute player**
+*unmute <mention> | **unmute player**
+*kick <mention> | **kick player**
+*server | **informations about server**
+*uptime | **to see uptime**
+*roll | **roll**
+*bc <message> | **to message all server members**
+*invs | **your server invite link**
+*staff | **staff bot**
+=======================================================================================
+Server Support : https://discord.gg/4qpRqE2
+=======================================================================================
+https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
+=============================================================================================
+`);
+
+    }
+});
+
+
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help.ar") {
+		 message.channel.send('**تم ارسالك في الخاص**');
             
 	
 		 
