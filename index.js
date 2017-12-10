@@ -523,7 +523,7 @@ if(command === `${prefix}message`) {
 });
 
 client.on('message', message => {
-    if (message.content.startsWith("*stats")) {
+    if (message.content.startsWith(prefix + "stats")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .addField('Uptime', timeCon(process.uptime()), true)
@@ -532,8 +532,6 @@ client.on('message', message => {
     })
 }
 });
-
-
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
     let hours = Math.floor(time % 31536000 % 86400 / 3600)
