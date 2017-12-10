@@ -298,12 +298,6 @@ message.channel.send('**تم الارسال في الخاص**');
 });
 
 
-client.on("ready", () => {
-  const Games = [`*help | *invite']
-  setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
-});
-
-
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
