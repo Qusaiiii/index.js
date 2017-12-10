@@ -520,16 +520,17 @@ if(command === `${prefix}message`) {
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help") {
-		 message.channel.send('**The Message Was Sent On Private**');
+		 message.channel.send('****');
             
 	
 		 
 
 
-
-client.on("ready", () => {
-  const Games = [`*help | *invite`]
-  setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag} !`);
+  client.user.setGame(`*help | *invite`,`https://www.twitch.tv/peery13`);
+  client.user.setStatus("idle")  
+});
 
 	
 client.login(process.env.BOT_TOKEN);
