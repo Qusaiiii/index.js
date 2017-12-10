@@ -12,43 +12,6 @@ client.on('message', msg => {
 });
 
 
-client.on("message", function(message) {
- if(message.author.bot) return;
- if(message.channel.type === "dm") return;
-let messageArray = message.content.split(" ");
-let command = messageArray[0];
-let args = message.content.split(" ").slice(2);
-let toSend = message.mentions.users.first();
-        
-         var currentTime = new Date(),
-          hours = currentTime.getHours() ,
-          minutes = currentTime.getMinutes(),
-          Year = currentTime.getFullYear() - 2000,
-          Month = currentTime.getMonth() + 1,
-          Day = currentTime.getDate();
-          var suffix = 'AM';
-          if (hours >= 12) {
-             suffix = 'PM';
-              hours = hours - 12;
-         }
-          if (hours == 0) {
-              hours = 12;
-          }
-let xFive = new Discord.RichEmbed()
-    .setColor("ORANGE")
-    .setAuthor(message.author.username,message.author.avatarURL)
-    .setThumbnail(message.author.avatarURL)
-    .setFooter("SenioR TeaM. || "+"- "+Month+"."+Year+"."+Day+" -"+hours+":"+minutes+" "+suffix)
-    .addField("Message","**"+args+"**")
-if(command === `${prefix}message`) {
-    if(toSend.bot) return message.reply("**# You cannot send a message to a bot!** :sparkler:");
-    if(args < 1) return message.reply("**# Please , Specify a valid arguments!** :sparkler:");
-    toSend.send({embed:xFive});
-    message.reply("** :white_check_mark: , Sent a Message to **<@"+toSend.id+">")
- }
-});
-
-
 client.on('message', message => {
         if (message.content.startsWith(prefix + "uptime")) {
     let ms = client.uptime;
