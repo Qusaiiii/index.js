@@ -539,6 +539,11 @@ function timeCon(time) {
 }
 
 
+lient.on("ready", () => {
+  const Games = [`*help | *invite`]
+  setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
+
+	
 client.login(process.env.BOT_TOKEN);
 
 
