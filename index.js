@@ -88,7 +88,7 @@ if (message.author.bot) return;
 
 client.on('message', message => {
   
-if (message.content.startsWith(prefix + 'perm')) {
+if (message.content.startsWith(prefix + 'perm.us')) {
          if(!message.channel.guild) return;
          var perms = JSON.stringify(message.channel.permissionsFor(message.author).serialize(), null, 4);
          var zPeRms = new Discord.RichEmbed()
@@ -102,7 +102,7 @@ if (message.content.startsWith(prefix + 'perm')) {
 
 
 client.on('message', function(message) {
-    if(message.content.startsWith(prefix + 'roll')) {
+    if(message.content.startsWith(prefix + 'roll.us')) {
         let args = message.content.split(" ").slice(1);
         if (!args[0]) {
             message.channel.send('**حط رقم معين يتم السحب منه**');
@@ -120,7 +120,7 @@ client.on('message', function(message) {
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help.us") {
-		 message.channel.send('**The Message Was Send On Prevate**');
+		 message.channel.send('**The Message Was Sent On Prevate**');
             
 	
 		 
@@ -168,7 +168,7 @@ https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&p
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help.ar") {
-		 message.channel.send('**تم ارسالك في الخاص**');
+		 message.channel.send('**تم الارسال في الخاص**');
             
 	
 		 
@@ -213,7 +213,7 @@ https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&p
 });
 
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "invs")) {
+    if (message.content.startsWith(prefix + "invs.us")) {
      if(!message.channel.guild) return;
 if (message.author.bot) return;
         message.channel.createInvite({
@@ -225,10 +225,10 @@ if (message.author.bot) return;
     )
     const Embed11 = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setDescription("تم ارسالك في الخاص")
+        .setDescription("The Message Was Sent On Prevate")
    .setFooter("اسم سيررك ",'رابط صوره سيرفرك')
                    .setTimestamp()
-				message.channel.send('**تم الارسال في الخاص**');
+				message.channel.send('**The Message Was Sent On Prevate**');
 
 
       message.channel.sendEmbed(Embed11).then(message => {message.delete(3000)})
@@ -238,7 +238,7 @@ if (message.author.bot) return;
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "staff") {
+     if (message.content === prefix + "staff.us") {
 
 
  message.author.sendMessage(`
@@ -260,14 +260,14 @@ Server Support : https://discord.gg/4qpRqE2
 https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
 `);
 
-message.channel.send('**تم الارسال في الخاص**');
+message.channel.send('**The Message Was Sent On Prevate**');
 
     }
 });
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "invite") {
+     if (message.content === prefix + "invite.us") {
 
 
  message.author.sendMessage(`
@@ -281,14 +281,13 @@ client.on('message', message => {
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
  
-بامكانك دعوة البوت من هنا
 
-https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
+Bot Link : https://discordapp.com/oauth2/authorize?client_id=388700863893602304&scope=bot&permissions=0
 
 Server Support : https://discord.gg/4qpRqE2
 `);
 
-message.channel.send('**تم الارسال في الخاص**');
+message.channel.send('**The Message Was Sent On Prevate**');
 
     }
 });
@@ -325,7 +324,7 @@ client.on('message', message => {
         if (message.guild) {
        let embed = new Discord.RichEmbed()
         let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc') {
+    if(message.content.split(' ')[0] == prefix + 'bc.us') {
         if (!args[1]) {
     message.channel.send("**.bc <message>**");
     return;
@@ -334,19 +333,19 @@ client.on('message', message => {
        if(!message.member.hasPermission('ADMINISTRATOR')) return;
                 var bc = new Discord.RichEmbed()
                 .setAuthor(message.author.username, message.author.avatarURL)
-                .addField('** الـسيرفر**', `${message.guild.name}`,true)
-                .addField(' **الـمرسل **', `${message.author.username}#${message.author.discriminator}`,true)
-                .addField(' **الرسالة** ', args)
+                .addField('** Server**', `${message.guild.name}`,true)
+                .addField(' **Sender **', `${message.author.username}#${message.author.discriminator}`,true)
+                .addField(' **Message** ', args)
                 .setThumbnail(message.guild.iconURL)
                 .setColor('RANDOM')
                 m.send(`${m}`,{embed: bc});
             });
             const AziRo = new Discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL)   
-            .setTitle('✔️ | جاري ارسال رسالتك ') 
+            .setTitle('✔️ | The Message Was Sent On Prevate ') 
             .addBlankField(true)
-            .addField('👥 | عدد الاعضاء المرسل لهم ', message.guild.memberCount , true)        
-            .addField('📋| الرسالة ', args)
+            .addField('👥 | Number OF Member Sent ', message.guild.memberCount , true)        
+            .addField('ا👥| Message ', args)
             .setColor('RANDOM')  
             message.channel.sendEmbed(AziRo);          
         }
