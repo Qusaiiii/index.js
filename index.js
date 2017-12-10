@@ -439,6 +439,12 @@ client.on("message", message => {
 });
 
 
+client.on("ready", () => {
+  const Games = [`*help | *invite`]
+  setInterval(() => { client.user.setGame(`${Games[Math.floor(Math.random() * Games.length)] }`) }, 10000)
+});
+
+
 client.on("message", message => {    
           if(!message.channel.guild) return;
    if(message.author.bot) return;
@@ -480,15 +486,19 @@ m.sendMessage(args)
 })
     
 
+            
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help") {
 		 message.channel.send('**Choose: *help.ar (arabic) | help.us (english)**');
-            
-	
+		 
+ 
+	 }
+});
+
 
 	
-client.login(process.env.BOT_TOKEN);
+client.login('process.env.BOT_TOKEN');
 
 
 var prefix = '*'
