@@ -481,7 +481,7 @@ const craft = ['ماهو اسم احسن سيرفر اجنبي في ماين ك�
 'ماهو الافضل للتسخين الافا او فحم ؟',
 'من مطور ماين كرافت ؟']
   client.on('message', message => {
-   if (message.content.startsWith("#m سؤال")) {
+   if (message.content.startsWith(prefix + 'mc_ask')) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
