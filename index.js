@@ -460,7 +460,39 @@ client.on("message", message => {
       }
   });
   
-	
+
+const craft = ['ماهو اسم احسن سيرفر اجنبي في ماين كرافت ؟',
+'هل للريد ستون اهميه كبيره في ماين كرافت ؟',
+'؟ Gold او الـ iron اي شيء احسن الـ',
+'ماهو الشي الذي يمكن ان يتكاثر القروي فيه ؟',
+'كم نوع اسهم في ماين كرافت تحديث 1.10 ؟',
+'ماهو الامر اللذي يعطينا كوماند بلوك ؟',
+'ماهو اقصى ارتفاع يمكنك البناء فيه ؟',
+'ماهو اصغر وحش في ماين كرافت ؟',
+'كم بلوكه توجد في ماين كرافت ؟',
+'ماهو اقوى وحش في ماين كرافت ؟',
+'ماهي اهم بلوكه في ماين كرافت ؟',
+'ماهو اضعف وحش في ماين كرافت ؟',
+'من منشئ ماين كرافت ؟',
+'فأي عام اطلقت لعبه ماين كرافت ؟',
+'في ماين كرافت العاديه ماهو الشئ الذي لا تستطيع ان تفعله في النذر ؟',
+'ماهو الصوت مشابه الاسفنج عندما نكسره ؟',
+'ماهو شئ الذي اقوى من الاوبسيدين ؟',
+'ماهو الافضل للتسخين الافا او فحم ؟',
+'من مطور ماين كرافت ؟']
+  client.on('message', message => {
+   if (message.content.startsWith("#m سؤال")) {
+                if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+   .setThumbnail(message.author.avatarURL) 
+ .addField('سؤال ماين كرافت' ,
+  `${craft[Math.floor(Math.random() * craft.length)]}`)
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
 client.login('process.env.BOT_TOKEN');
 
 
