@@ -458,49 +458,6 @@ client.on("message", message => {
       }
   });
   
-var PREFIX = '*';
-
-client.on('message', message => {
-
-var args = message.content.substring(PREFIX.length).split(' ');
-
-    switch (args[0].toLowerCase()) {
-        case 'play':
-            if (!args[1]) {
-                message.channel.sendMessage('يجب ان تضع الرابط');
-                return;
-            }
-
-            if (!message.member.voiceChannel) {
-                    message.channel.sendMessage('يجب عليك ان تكون في روم صوتي');
-                return;
-            }
-
-            if (!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-            }
-
-            var server = servers[message.guild.id];
-
-            server.queue.push(args[1]);
-
-            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-                play(connection, message);
-            });
-            break;
-            case 'skip':
-            var server = servers[message.guild.id];
-
-            if(server.dispatcher) server.dispatcher.end();
-                break;
-
-                case 'stop':
-                    var server = server = servers[message.guild.id];
-
-                    if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-                    break;
-    }
-});
 
 
 client.login('process.env.BOT_TOKEN');
