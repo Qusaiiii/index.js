@@ -260,6 +260,7 @@ message.channel.send(image)
     }
 });
 
- client.login('NDcwOTE4NjQzMjI0Njc0MzA0.DjetcA.VHwgC0kfXkmRQkGJPhT8m2oJmJM');
  
 });
+
+client.login(process.env.BOT_TOKEN);
