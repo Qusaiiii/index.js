@@ -12,7 +12,7 @@ var mcIP = 'RqlixMC.Net'; // Your MC server IP
 var mcPort = 25565; // Your MC server port
 
 
-client.on('message',message => {
+client.on('message',async message => {
 
     if (message.content === mcCommand) {
 
@@ -161,7 +161,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
       });
 
-  client.on('message', message => {
+  client.on('message', async message => {
   if(message.content.startsWith("#modapply")) {
     message.channel.send("**:writing_hand: ارسل اسمك في ماين كرافت **").then(e => {
     let filter = m => m.author.id === message.author.id
@@ -201,7 +201,7 @@ gg.send({embed : new Discord.RichEmbed()//By Codes , - ST I EdiTeD , .#4968//By 
 })
 })
  }//By Codes ,
-client.on('message',message => {
+client.on('message',async message => {
   let mention = message.mentions.members.first();
   let role = message.content.split(" ").slice(2).join(" ");
   let mySupport = message.guild.roles.find('name',role);
@@ -219,7 +219,7 @@ client.on('message',message => {
     });
   }
 });
-  client.on('message',message => {
+  client.on('message',async message => {
   let mention = message.mentions.members.first();
   let acRoom = client.channels.get('470957603019816971');
   if(message.content.startsWith(prefix + "رفض")) {
