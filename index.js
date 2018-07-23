@@ -3,7 +3,6 @@
 	const fs = require('fs');
 	const prefix = "#"
 	const moment = require('moment');
-        const sql = require("sqlite");
 
   client.on('message', message => {
   if(message.content.startsWith("#modapply")) {
