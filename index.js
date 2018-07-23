@@ -130,5 +130,5 @@ client.on('message',async message => {
 });
   
 
-client.login(process.env.BOT_TOKEN);
+client.login('NDcwOTE4NjQzMjI0Njc0MzA0.DjfBsA.L5yvoZ4mp4vtNlw_1qr_FQ4JfBQ');
 });
