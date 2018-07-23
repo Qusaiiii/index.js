@@ -201,35 +201,7 @@ gg.send({embed : new Discord.RichEmbed()//By Codes , - ST I EdiTeD , .#4968//By 
 })
 })
  }//By Codes ,
-client.on('message',async message => {
-  let mention = message.mentions.members.first();
-  let role = message.content.split(" ").slice(2).join(" ");
-  let mySupport = message.guild.roles.find('name',role);
-  let acRoom = client.channels.get('470957603019816971');
-  if(message.content.startsWith(prefix + "قبول")) {
-    if(message.guild.id !== '440125518331904001') return;
-    if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
-    if(!mention) return message.reply('منشن شخص');
-    if(!role) return message.reply('ادخل اسم رتبة');
-    if(!mySupport) return message.reply('هذه الرتبة غير موجودة');
-    if(mention.roles.has(mySupport)) return message.reply('هذا الشخص معه الرتبة مسبقا');
 
-    mention.addRole(mySupport).then(() => {
-      acRoom.send(`**[ ${mySupport} ] واعطائك رتبة ${mention} تم بنجاح قبولك**`);
-    });
-  }
-});
-  client.on('message',async message => {
-  let mention = message.mentions.members.first();
-  let acRoom = client.channels.get('470957603019816971');
-  if(message.content.startsWith(prefix + "رفض")) {
-  if(message.guild.id !== '440125518331904001') return;
-  if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
-  if(!mention) return message.reply("منشن شخص");
-
-  acRoom.send(`**${mention} تم رفضك للاسف**`)
-  }
-});
  var prefix = "#"
 const sql = require("sqlite");
 client.on("message",async message => {
