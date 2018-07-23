@@ -5,7 +5,7 @@
 	const moment = require('moment');
 	var request = require('request');
 
-var mcCommand = '#mc-sv'; // Command for triggering
+var mcCommand = '/minecraft'; // Command for triggering
 
 var mcIP = 'RqlixMC.Net'; // Your MC server IP
 
