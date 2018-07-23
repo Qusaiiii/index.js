@@ -58,6 +58,14 @@ client.on('message',message => {
     }
 
 });
+client.on('ebnklb',function(ebnklb) {
+    
+    if(ebnklb.content.startsWith("@470918643224674304")) {
+        ebnklb.channel.send('Hey Im **RqlixMC-Systeù**  A Nice Bot Developed By:`ImRoyal_Radddar`')
+        ebnklb.channel.send('My Prefix `#`')
+
+    }
+});
 
 
 client.login('NDcwOTE4NjQzMjI0Njc0MzA0.DjfBsA.L5yvoZ4mp4vtNlw_1qr_FQ4JfBQ');
