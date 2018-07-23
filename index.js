@@ -5,7 +5,7 @@
 	const moment = require('moment');
 	var request = require('request');
 
-var mcCommand = '/minecraft'; // Command for triggering
+var mcCommand = '#mc-sv'; // Command for triggering
 
 var mcIP = 'RqlixMC.Net'; // Your MC server IP
 
@@ -30,11 +30,11 @@ client.on('message',message => {
 
             body = JSON.parse(body);
 
-            var status = '*Minecraft server is currently offline*';
+            var status = '*Rqlixmc server is currently offline*';
 
             if(body.online) {
 
-                status = '**Minecraft** server is **online** - ';
+                status = '**Rqlixmc** server is **online** - ';
 
                 if(body.players.now) {
 
