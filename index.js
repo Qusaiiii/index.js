@@ -5,7 +5,7 @@
 	const moment = require('moment');
         const sql = require("sqlite");
 
-  client.on('message', async message => {
+  client.on('message', message => {
   if(message.content.startsWith("#modapply")) {
     message.channel.send("**:writing_hand: ارسل اسمك في ماين كرافت **").then(e => {
     let filter = m => m.author.id === message.author.id
@@ -55,7 +55,7 @@ var mcIP = 'RqlixMC.Net'; // Your MC server IP
 var mcPort = 25565; // Your MC server port
 
 
-client.on('message',async message => {
+client.on('message',message => {
 
     if (message.content === mcCommand) {
 
@@ -98,7 +98,7 @@ client.on('message',async message => {
     }
 
 });
-  client.on("message",async message => {
+  client.on("message",message => {
     if (message.content.startsWith(prefix + "at")) {
          var ids = [
             "20",
