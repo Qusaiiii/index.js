@@ -232,7 +232,7 @@ client.on('message',message => {
 });
  var prefix = "#"
 const sql = require("sqlite");
-client.on("message",message => {
+client.on("message",async message => {
     if (message.content.startsWith(prefix + "at")) {
          var ids = [
             "20",
