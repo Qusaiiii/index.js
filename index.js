@@ -3,7 +3,6 @@
 	const fs = require('fs');
 	const prefix = "#"
 	const moment = require('moment');
-var prefix = "#"
 const sql = require("sqlite");
 client.on("message",async message => {
     if (message.content.startsWith(prefix + "at")) {
