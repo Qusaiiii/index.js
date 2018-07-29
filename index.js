@@ -2,7 +2,6 @@
 	const client = new Discord.Client()
 	const fs = require('fs');
 	const prefix = "#"	
-	const jimp = require("jimp");
 	const moment = require('moment');
         const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
