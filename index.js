@@ -1,8 +1,7 @@
 	const Discord = require('discord.js');
 	const client = new Discord.Client()
 	const fs = require('fs');
-	const prefix = "#"
-	
+	const prefix = "#"	
 	const moment = require('moment');
         const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
@@ -28,40 +27,7 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Us");
 client.channels.find('id', '473104410571177986').setName("「 This Server Useing Frix Premium 」");
   }, 3000);
 });
-client.on('message', message => {
-  if (message.author.id === client.user.id) return;
-  if (message.guild) {
- let embed = new Discord.RichEmbed()
-  let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
-  if (!args[1]) {
-message.channel.send("**#bc <message>**");
-return;
-}
-      message.guild.members.forEach(m => {
- if(!message.member.hasPermission('ADMINISTRATOR')) return;
-          var bc = new Discord.RichEmbed()
-          .setAuthor(message.author.username, message.author.avatarURL)
-          .addField(' الـسيرفر', `${message.guild.name}`,true)
-          .addField(' الـمرسل ', `${message.author.username}!${message.author.discriminator}`,true)
-          .addField(' الرسالة ', args)
-          .setThumbnail(message.guild.iconURL)
-          .setColor('RANDOM')
-          m.send(`${m}`,{embed: bc});
-      });
-      const AziRo = new Discord.RichEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setTitle('✅| جاري ارسال رسالتك ')
-      .addBlankField(true)
-      .addField('♨| عدد الاعضاء المرسل لهم ', message.guild.memberCount , true)
-      .addField('📝| الرسالة ', args)
-      .setColor('RANDOM')
-      message.channel.sendEmbed(embed);
-  }
-  } else {
-      return;
-  }
-});
+
 client.on('message', message => {
     if (message.content.startsWith("#avatar")) {
         var mentionned = message.mentions.users.first();
