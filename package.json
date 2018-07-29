@@ -24,6 +24,7 @@
     "array-sort": "1.0.0",
     "table": "4.0.3",
     "dateformat":"3.0.3",
+    "canvas":"^1.6.11"
     "jimp":"0.2.28",
     "get-youtube-id": "^1.0.0",
     "moment": "^2.22.1",
