@@ -44,38 +44,39 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-client.on('message',  (message) => {
-        if(message.content.startsWith('#كف')) {
-  let user = message.mentions.users.first();
-  if (!user) {
-    /**
-     * The command was ran with invalid parameters.
-     * @fires commandUsage
-     */
-    return message.emit('commandUsage', message, this.help);
-  }
+client.on('message',function(message) {
+  if(!message.channel.guild) return;
 
-  let punches = [
-    'https://i.giphy.com/media/iWEIxgPiAq58c/giphy.gif',
-    'https://i.giphy.com/media/DViGV8rfVjw6Q/giphy.gif',
-    'https://i.giphy.com/media/GoN89WuFFqb2U/giphy.gif',
-    'https://i.giphy.com/media/xT0BKiwgIPGShJNi0g/giphy.gif',
-    'https://i.giphy.com/media/Lx8lyPHGfdNjq/giphy.gif'
-  ];
+    if (message.content === prefix + "discrim") {
+let messageArray = message.content.split(" ");
+let args = messageArray.slice(1);
 
-  message.channel.send({
-    embed: {
-      description: `${message.author.username} عطاك كففف ${user.username}! 👊`,
-      image: {
-        url: punches[Math.floor(Math.random() * punches.length)]
-      }
-    }
-  }).catch(e => {
-    client.log.error(e);
-  })
-        }  
+if (message.author.bot) return;
+
+var discri = args[0]
+let discrim
+if(discri){
+discrim = discri;
+}else{
+discrim = message.author.discriminator;
+}
+if(discrim.length == 1){
+discrim = "000"+discrim
+}
+if(discrim.length == 2){
+discrim = "00"+discrim
+}
+if(discrim.length == 3){
+discrim = "0"+discrim
+}
+
+const users = client.users.filter(user => user.discriminator === discrim).map(user => user.username);
+return message.channel.send(`
+**Found ${users.length} users with the discriminator #${discrim}**
+${users.join('\n')}
+`);
+}
 });
-
 
 client.on('message', msg => {
     if(msg.author.bot) return;
@@ -250,6 +251,7 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 7༺༻  #avatar | Avatar༺༻
 9༺༻  #level | Level༺༻
 10༺༻  #كت تويت | Cut-Tweet༺༻
+10༺༻ #Discrim | Discrim༺༻
 11༺༻  مميزات البوت༺༻
 - Tickets
 - AutoRole
