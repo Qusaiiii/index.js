@@ -31,7 +31,7 @@ client.on('message', async message => {
     let args = message.content.split(" ");
     let warns = JSON.parse(fs.readFileSync('./warnings.json' , 'utf8'));
       if(message.content.startsWith(prefix + "warn")) {
-      if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
+      if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("No can do pal!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!wUser) return message.reply("**منشن شخص**");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("**لايمكنني اعطاء تحذير للادارة**");
