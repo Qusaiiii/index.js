@@ -33,8 +33,8 @@ client.on('message', async message => {
       if(message.content.startsWith(prefix + "warn")) {
       if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if(!wUser) return message.reply("Metion a member.");
-  if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("You cannot warn a staff member");
+  if(!wUser) return message.reply("**منشن شخص**");
+  if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("**لايمكنني اعطاء تحذير للادارة**");
   let reason = args.join(" ").slice(22);
 
   if(!warns[wUser.id]) warns[wUser.id] = {
