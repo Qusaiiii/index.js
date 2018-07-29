@@ -49,7 +49,7 @@ client.on('message', message => {
 const id = JSON.parse(fs.readFileSync("./mozo.json", "utf8"));
 client.on("message", message => {
   if (message.author.bot) return;
-fs.writeFile('./id/mozo.json', JSON.stringify(id), (err) => {
+fs.writeFile('./mozo.json', JSON.stringify(id), (err) => {
 if (err) console.error(err);
 });
 });
