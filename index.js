@@ -249,7 +249,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    
   client.on('message', message => {//By Codes , ' ّEpicEdiTeDّ#4968
               if(!message.channel.guild) return;//By Codes , ' ّEpicEdiTeDّ#4968
-    var prefix = "#";//By Codes , ' ّEpicEdiTeDّ#4968
+ 
     if(message.content.startsWith('#bc')) {//By Codes , ' ّEpicEdiTeDّ#4968
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للإدارة**').then(m => m.delete(5000));//By Codes , ' ّEpicEdiTeDّ#4968
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية لاستعمال هاذا الأمر** //By Codes , ' ّEpicEdiTeDّ#4968`ADMINISTRATOR`' );//By Codes , ' ّEpicEdiTeDّ#4968
