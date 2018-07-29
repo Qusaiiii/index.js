@@ -45,7 +45,75 @@ client.on('message', message => {
     }
 });
 
+const cuttweet = [
+     'كت تويت ‏| تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
+     'كت تويت | أكثر شيء يُسكِت الطفل برأيك؟',
+     'كت تويت | الحرية لـ ... ؟',
+     'كت تويت | قناة الكرتون المفضلة في طفولتك؟',
+     'كت تويت ‏| كلمة للصُداع؟',
+     'كت تويت ‏| ما الشيء الذي يُفارقك؟',
+     'كت تويت | موقف مميز فعلته مع شخص ولا يزال يذكره لك؟',
+     'كت تويت ‏| أيهما ينتصر، الكبرياء أم الحب؟',
+     'كت تويت | بعد ١٠ سنين ايش بتكون ؟',
+     'كت تويت ‏| مِن أغرب وأجمل الأسماء التي مرت عليك؟',
+     '‏كت تويت | عمرك شلت مصيبة عن شخص برغبتك ؟',
+     'كت تويت | أكثر سؤال وجِّه إليك مؤخرًا؟',
+     '‏كت تويت | ما هو الشيء الذي يجعلك تشعر بالخوف؟',
+     '‏كت تويت | وش يفسد الصداقة؟',
+     '‏كت تويت | شخص لاترفض له طلبا ؟',
+     '‏كت تويت | كم مره خسرت شخص تحبه؟.',
+     '‏كت تويت | كيف تتعامل مع الاشخاص السلبيين ؟',
+     '‏كت تويت | كلمة تشعر بالخجل اذا قيلت لك؟',
+     '‏كت تويت | جسمك اكبر من عٌمرك او العكسّ ؟!',
+     '‏كت تويت |أقوى كذبة مشت عليك ؟',
+     '‏كت تويت | تتأثر بدموع شخص يبكي قدامك قبل تعرف السبب ؟',
+     'كت تويت | هل حدث وضحيت من أجل شخصٍ أحببت؟',
+     '‏كت تويت | أكثر تطبيق تستخدمه مؤخرًا؟',
+     '‏كت تويت | ‏اكثر شي يرضيك اذا زعلت بدون تفكير ؟',
+     '‏كت تويت | وش محتاج عشان تكون مبسوط ؟',
+     '‏كت تويت | مطلبك الوحيد الحين ؟',
+     '‏كت تويت | هل حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
+]
 
+ client.on('message', message => {
+     if (message.author.bot) return;
+   if (message.content.startsWith("#كت تويت")) {
+                if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+   .setThumbnail(message.author.avatarURL) 
+ .addField('لعبه كت تويت' ,
+  `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
+  message.channel.sendEmbed(embed);
+  console.log('[id] Send By: ' + message.author.username)
+    }
+});
+let points = JSON.parse(fs.readFileSync("./level.json", "utf8"));
+ client.on("message", message => {
+   if (!message.content.startsWith(prefix)) return;
+   if (message.author.bot) return; 
+
+   if (!points[message.author.id]) points[message.author.id] = {
+     points: 0,
+     level: 0
+   };
+   let userData = points[message.author.id];
+   userData.points++;
+ 
+   let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
+   if (curLevel > userData.level) {
+     // Level up message
+     userData.level = curLevel;
+     message.channel.send(`**🆙 | ${message.author.username} You leveled up to ${curLevel}**`);
+   }
+   if (message.content.startsWith(prefix + "level")) {
+     message.channel.send(`**${message.author.username} You are level is ${userData.level}**`);
+   }
+   fs.writeFile("./level.json", JSON.stringify(points), (err) => {
+     if (err) console.error(err)
+   });
+ 
+ });
 
 let ar = JSON.parse(fs.readFileSync(`./autorole.json`, `utf8`))
 client.on('guildMemberAdd', member => {
@@ -125,7 +193,9 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 6༺༻  #play | Play music༺༻
 7༺༻  #autorole | AutoRole༺༻
 7༺༻  #avatar | Avatar༺༻
-8༺༻  مميزات البوت༺༻
+9༺༻  #level | Level༺༻
+10༺༻  #كت تويت | Cut-Tweet༺༻
+11༺༻  مميزات البوت༺༻
 - Tickets
 - AutoRole
 - Welcome
