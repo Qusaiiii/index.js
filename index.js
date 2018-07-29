@@ -3,7 +3,6 @@
 	const fs = require('fs');
 	const prefix = "#"	
 	const jimp = require("jimp");
-        const Canvas = require("canvas");
 	const moment = require('moment');
         const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
