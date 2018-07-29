@@ -168,7 +168,7 @@ client.on('message',async message => {
   }
 });
  client.on('message', async message => {
-            if(message.content.includes('discord.gg')){ 
+            if(message.content.includes('discord.gg', 'https://')){ 
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
