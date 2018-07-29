@@ -44,7 +44,6 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-cجميع الحقوق محفوظه لهيكس وخبز
 client.on("message", message => {
     var prefix = "#";
  
