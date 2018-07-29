@@ -44,23 +44,7 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-client.on("message", message => {
-    var prefix = "#";
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-                            let embed4 = new Discord.RichEmbed()
-             .setDescription("**:white_check_mark: | جاري ارسال البرودكاست**")
-           .addField("مرسل البرودكاست" , message.author)
-          .addField("نص البرودكاست" ,args.join("  "))
-                            .addField("عدد الاعضاء المرسل لهم :busts_in_silhouette:" ,` **[${message.guild.memberCount}]**`,true)
-                                                            .setColor("#008000")
-                                message.channel.sendEmbed(embed4);
-                                                      message.delete();
-                            
-                          }
-});
+
 
 
 let ar = JSON.parse(fs.readFileSync(`./autorole.json`, `utf8`))
@@ -122,7 +106,7 @@ Role : __${ar[message.guild.id].role}__`)
   }
 
 
-    fs.writeFile("./Data/AutoRole.json", JSON.stringify(ar), (err) => {
+    fs.writeFile(".autorole.json", JSON.stringify(ar), (err) => {
     if (err) console.error(err)
   });
 
