@@ -12,28 +12,28 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
-	//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+	
 	if (!msg.content.startsWith(prefix)) return undefined;
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
-	//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+	
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
-//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
-//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
-			//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+			
 			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
-		}//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+		}
 		if (!permissions.has('SPEAK')) {
 			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
-		}//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+		}
 
 		if (!permissions.has('EMBED_LINKS')) {
 			return msg.channel.sendMessage("**يجب توآفر برمشن `EMBED LINKS`لدي **")
@@ -42,25 +42,25 @@ client.on('message', async msg => { // eslint-disable-line
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
 			const playlist = await youtube.getPlaylist(url);
 			const videos = await playlist.getVideos();
-			//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+			
 			for (const video of Object.values(videos)) {
 				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
-			}//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+			}
 			return msg.channel.send(` **${playlist.title}** تم الإضآفة إلى قأئمة التشغيل`);
 		} else {
-			try {//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+			try {
 
 				var video = await youtube.getVideo(url);
 			} catch (error) {
-				try {//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+				try {
 					var videos = await youtube.searchVideos(searchString, 5);
 					let index = 0;
 					const embed1 = new Discord.RichEmbed()
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
-//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-					.setFooter("RqlixMC v0.1")
+
+					.setFooter("Frix v0.1")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					// eslint-disable-next-line max-depth
@@ -249,62 +249,11 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    
   
 
-	var request = require('request');
 
-var mcCommand = '/minecraft'; // Command for triggering
-
-var mcIP = 'RqlixMC.Net'; // Your MC server IP
-
-var mcPort = 25565; // Your MC server port
-
-
-client.on('message',message => {
-
-    if (message.content === mcCommand) {
-
-        var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort;
-
-        request(url, function(err, response, body) {
-
-            if(err) {
-
-                console.log(err);
-
-                return message.reply('Error getting Minecraft server status...');
-
-            }
-
-            body = JSON.parse(body);
-
-            var status = '*Rqlixmc server is currently offline*';
-
-            if(body.online) {
-
-                status = '**Rqlixmc** server is **online** - ';
-
-                if(body.players.now) {
-
-                    status += '**' + body.players.now + '** people are playing!';
-
-                } else {
-
-                    status += '*Nobody is playing!*';
-
-                }
-
-            }
-
-            message.reply(status);
-
-        });
-
-    }
-
-});
 client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith("<@470918643224674304>")) {
-        ebnklb.channel.send('Hey Im **RqlixMC-System**  A Nice Bot Developed By:`ImRoyal_Radddar`')
+        ebnklb.channel.send('Hey Im **Frix Commuinty**  A Nice Bot Developed By:`ImRoyal_Radddar`')
         ebnklb.channel.send('My Prefix `#`')
 
     }
@@ -324,7 +273,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "RqlixMC v0.1"
+          text: "Frix v0.1"
         }
       }}).then(msg => {msg.delete(3000)});
                           }
@@ -528,7 +477,7 @@ let v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("RED")
   v1.setDescription('***__ Collecting Data __***')
-  v1.setFooter("& | RqlixMC |") 
+  v1.setFooter("& | Frix Commuinty |") 
 let heroo = new Discord.RichEmbed()
 .setColor('RANDOM')
 .setTimestamp(new Date())
@@ -542,7 +491,7 @@ let heroo = new Discord.RichEmbed()
 .addField("MyID :","**[ "+client.user.id+" ]**",true)
 .addField("RamUsage :",`**[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]**`,true)
 .addField("UpTime :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
-.setFooter("RqlixMC v0.1 |")
+.setFooter("Frix v0.1 |")
   message.channel.send({embed:v1}).then(m => m.edit({embed:heroo})),ms; 
     }
 });
@@ -11738,4 +11687,4 @@ message.member.addRole(message.guild.roles.find("name", "100"));
   }
 	
 });
-client.login('NDcwOTE4NjQzMjI0Njc0MzA0.DjfBsA.L5yvoZ4mp4vtNlw_1qr_FQ4JfBQ');
+client.login('NDczMDYwMjg3MjMxMDMzMzc2.Dj8fuQ.D199izNfplmDunP2sfzHLTeoj9o');
