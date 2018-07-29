@@ -28,6 +28,35 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Useing
   }, 3000);
 });
 client.on('message', async message => {
+    let date = moment().format('Do MMMM YYYY , hh:mm');
+    let User = message.mentions.users.first();
+    let Reason = message.content.split(" ").slice(3).join(" ");
+    let messageArray = message.content.split(" ");
+    let time = messageArray[2];
+    if(message.content.startsWith(prefix + "tempban")) {
+       if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("**لاتمتلك صلاحيات**");
+       if(!User) message.channel.send("**منشن شخص**");
+       if(User.id === client.user.id) return message.channel.send("**لاتستطيع حظري**");
+       if(User.id === message.guild.owner.id) return message.channel.send("**لا استطيع ان احظر الادارة**");
+       if(!time) return message.channel.send("**ضع الوقت الذي تريده**");
+       if(!time.match(/[1-7][s,m,h,d,w]/g)) return message.channel.send('**ضع وقت حقيقي**');
+       if(!Reason) message.channel.send("**ضع سبب**");
+       let banEmbed = new Discord.RichEmbed()
+       .setAuthor(`You have been banned from ${message.guild.name} !`)
+       .setThumbnail(message.guild.iconURL || message.guild.avatarURL)
+       .addField('- تم حظره من قبل: ',message.author.tag,true)
+       .addField('- السبب:',Reason,true)
+       .addField('- الوقت الذي تبند فيه:',date,true)
+       .addField('- وقت الحظر:',time,true)
+       .setFooter(message.author.tag,message.author.avatarURL);
+       User.sendMessage({embed: banEmbed}).then(() => message.guild.member(User).ban({reason: Reason}))
+       .then(() => message.channel.send(`**# Done! I banned: ${User}**`)).then(() => { setTimeout(() => {
+           message.guild.unban(User);
+       }, mmss(time));
+    });
+   } 
+});
+client.on('message', async message => {
     let args = message.content.split(" ");
     let warns = JSON.parse(fs.readFileSync('./warnings.json' , 'utf8'));
       if(message.content.startsWith(prefix + "warn")) {
