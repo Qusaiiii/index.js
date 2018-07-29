@@ -252,8 +252,8 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
  
     if(message.content.startsWith('#bc')) {//By Codes , ' ّEpicEdiTeDّ#4968
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للإدارة**').then(m => m.delete(5000));//By Codes , ' ّEpicEdiTeDّ#4968
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية لاستعمال هاذا الأمر** //By Codes , ' ّEpicEdiTeDّ#4968`ADMINISTRATOR`' );//By Codes , ' ّEpicEdiTeDّ#4968
-    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);//By Codes , ' ّEpicEdiTeDّ#4968
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية لاستعمال هاذا الأمر** 
+    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
     let copy = "Frix v0.1";//By Codes , ' ّEpicEdiTeDّ#4968
     let request = `Requested By ${message.author.username}`;//By Codes , ' ّEpicEdiTeDّ#4968
     if (!args) return message.reply('**يجب عليك كتابة شيئ لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من الإرسال؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {//By Codes , ' ّEpicEdiTeDّ#4968
