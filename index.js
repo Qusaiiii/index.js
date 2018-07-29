@@ -27,7 +27,31 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Us");
 client.channels.find('id', '473104410571177986').setName("「 This Server Useing Frix Premium 」");
   }, 3000);
 });
+ client.on('message', message => {
+  if (true) {
+if (message.content === 'invite') {
+      message.author.send('https://discordapp.com/oauth2/authorize?client_id=473060287231033376&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
+    }
+   } 
+  });
+
+
+client.on('message', message => {
+     if (message.content === "invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
+  
+  
+  
 
 client.on('message',async message => {
   let args = message.content.split(" ").slice(1).join(" ");
