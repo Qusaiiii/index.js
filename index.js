@@ -10,46 +10,7 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
-client.on('message', async message => {//By Codes , - ST I EdiTeD , .#4968
-  if(message.content.startsWith(prefix + "apply")) {//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-    await message.channel.send("**:writing_hand: ارسل هل لديك خبرة سابقة او لا **").then(e => {
-    let filter = m => m.author.id === message.author.id
-    let lan = '';
-    let md = '';//By Codes , - ST I EdiTeD , .#4968
-    let br = '';//By Codes , - ST I EdiTeD , .#4968
-    let chaLan = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-    .then(collected => {
-      lan = collected.first().content
-      collected.first().delete()
-e.edit(`**:ارسل هل انت متفاعل او لا**`)
-let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-.then(co => {//By Codes , - ST I EdiTeD , .#4968
-  md = co.first().content
-        co.first().delete()//By Codes , - ST I EdiTeD , .#4968
-        e.edit(`**ارسل لماذا تريد التقديم على الرتبة**`)
-let br = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-.then(col => {
-  br = col.first().content
-        col.first().delete()
-e.edit("**جاري التقديم علي طلبك...**").then(b => {//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-        setTimeout(() => {
-  b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
-        },2000);
-var gg = message.guild.channels.find('name', 'التقديمات')
-if(!gg) return;//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-if(gg) {
-gg.send({embed : new Discord.RichEmbed()//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-.setDescription(`**الخبرة : \n ${lan}\n هل هو متفاعل او لا :\n ${md} \n سبب التقديم:\n ${br}  **`)  
-          .setFooter(`Codes.`)//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-.setTimestamp()//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-});
-}        
-})
-})
-})//By Codes , - ST I EdiTeD , .#4968
-})
-})
- }//By Codes ,
+
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
@@ -11747,4 +11708,3 @@ client.on('message' , message => {
   
 client.login('NDczMDYwMjg3MjMxMDMzMzc2.Dj8fuQ.D199izNfplmDunP2sfzHLTeoj9o');
 	
-});
