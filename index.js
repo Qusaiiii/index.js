@@ -44,16 +44,7 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-client.on('message', message => {
-if (message.content.split(' ')[0] == '#bc')
- message.guild.members.forEach( member => {
-         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
-                                                            message.delete();
-});
-});
-
-//جميع الحقوق محفوظه لهيكس وخبز
+cجميع الحقوق محفوظه لهيكس وخبز
 client.on("message", message => {
     var prefix = "#";
  
@@ -720,7 +711,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith("<@470918643224674304>")) {
-        ebnklb.channel.send('Hey Im **Frix Commuinty**  A Nice Bot Developed By:`ImRoyal_Radddar`')
+        ebnklb.channel.send('Hey Im **Frix Commuinty**  A Nice Bot Developed By:`ImRoyal_Raddar`')
         ebnklb.channel.send('My Prefix `#`')
 
     }
@@ -12137,5 +12128,3 @@ client.on('message' , message => {
   
 client.login('NDczMDYwMjg3MjMxMDMzMzc2.Dj8fuQ.D199izNfplmDunP2sfzHLTeoj9o');
 	
-
-	});
