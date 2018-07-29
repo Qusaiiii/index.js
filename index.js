@@ -11688,7 +11688,6 @@ message.member.addRole(message.guild.roles.find("name", "100"));
 	
 });
 client.on('message' , message => {
-var prefix = "!";
     if (message.content.startsWith(prefix + "shutdown")) {
         if (message.member.roles.some(r=>["「 Bots Manager 」"].includes(r.name)) ) {
                      message.channel.sendMessage("**:** ***Currently Shutting down...*** ")
