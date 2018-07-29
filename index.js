@@ -28,7 +28,7 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Us");
 client.channels.find('id', '473104410571177986').setName("「 This Server Useing Frix Premium 」");
   }, 3000);
 });
-let ar = JSON.parse(fs.readFileSync(`./Data/AutoRole.json`, `utf8`))
+let ar = JSON.parse(fs.readFileSync(`./AutoRole.json`, `utf8`))
 client.on('guildMemberAdd', member => {
   if(!ar[member.guild.id]) ar[member.guild.id] = {
   onoff: 'Off',
