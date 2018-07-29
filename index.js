@@ -28,6 +28,23 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Us");
 client.channels.find('id', '473104410571177986').setName("「 This Server Useing Frix Premium 」");
   }, 3000);
 });
+client.on('message', message => {
+    if (message.content.startsWith("#avatar")) {
+        var mentionned = message.mentions.users.first();
+    var x5bzm;
+      if(mentionned){
+          var x5bzm = mentionned;
+      } else {
+          var x5bzm = message.author;
+          
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setImage(`${x5bzm.avatarURL}`)
+      message.channel.sendEmbed(embed);
+    }
+});
+
 let ar = JSON.parse(fs.readFileSync(`./autorole.json`, `utf8`))
 client.on('guildMemberAdd', member => {
   if(!ar[member.guild.id]) ar[member.guild.id] = {
@@ -104,6 +121,14 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 4༺༻  #close | Close the ticket༺༻
 5༺༻  #gRole RoleName | Show The stats of the role༺༻
 6༺༻  #play | Play music༺༻
+7༺༻  #autorole | AutoRole༺༻
+6༺༻  مميزات البوت༺༻
+- Tickets
+- AutoRole
+- Welcome
+- Warn 
+- Colors
+- Music
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 Click On ▶ To Go Administor Side
    `
