@@ -44,6 +44,34 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
+client.on('message', message => {
+if (message.content.split(' ')[0] == '#bc')
+ message.guild.members.forEach( member => {
+         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
+                                                            message.delete();
+});
+});
+
+//جميع الحقوق محفوظه لهيكس وخبز
+client.on("message", message => {
+    var prefix = "#";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+                            let embed4 = new Discord.RichEmbed()
+             .setDescription("**:white_check_mark: | جاري ارسال البرودكاست**")
+           .addField("مرسل البرودكاست" , message.author)
+          .addField("نص البرودكاست" ,args.join("  "))
+                            .addField("عدد الاعضاء المرسل لهم :busts_in_silhouette:" ,` **[${message.guild.memberCount}]**`,true)
+                                                            .setColor("#008000")
+                                message.channel.sendEmbed(embed4);
+                                                      message.delete();
+                            
+                          }
+});
+
 
 let ar = JSON.parse(fs.readFileSync(`./autorole.json`, `utf8`))
 client.on('guildMemberAdd', member => {
@@ -122,13 +150,15 @@ if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send
 5༺༻  #gRole RoleName | Show The stats of the role༺༻
 6༺༻  #play | Play music༺༻
 7༺༻  #autorole | AutoRole༺༻
-6༺༻  مميزات البوت༺༻
+7༺༻  #avatar | Avatar༺༻
+8༺༻  مميزات البوت༺༻
 - Tickets
 - AutoRole
 - Welcome
 - Warn 
 - Colors
 - Music
+- Anti-Links
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 Click On ▶ To Go Administor Side
    `
@@ -139,8 +169,9 @@ Click On ▶ To Go Administor Side
 2༺༻  #mute | Msg Everyone In The Server༺༻
 3༺༻  #tempban | Kick With Reson༺༻
 4༺༻  #warn | Ban With Reason༺༻
-4༺༻  #cc Number | Create colors with number like #cc 100 this will create for you 100 color༺༻
-5༺༻ Make Room Called log For Logs༺༻
+5༺༻  #bc | BroadCast༺༻
+6༺༻  #cc Number | Create colors with number like #cc 100 this will create for you 100 color༺༻
+7༺༻ Make Room Called log For Logs༺༻
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 Click On ▶ To Go To Bot Info
    `,`
