@@ -174,7 +174,7 @@ message.channel.sendFile(canvas.toBuffer());
 client.on('message', msg => {
     if(msg.author.bot) return;
     
-    if(msg.content === '#serversinfo') {
+    if(msg.content === '#seceretcommand') {
       client.guilds.forEach(g => {
         
         let l = g.id
