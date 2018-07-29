@@ -27,6 +27,67 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Us");
 client.channels.find('id', '473104410571177986').setName("「 This Server Useing Frix Premium 」");
   }, 3000);
 });
+client.on('message', async message => {
+    let args = message.content.split(" ");
+    let warns = JSON.parse(fs.readFileSync('./warnings.json' , 'utf8'));
+      if(message.content.startsWith(prefix + "warn")) {
+      if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
+  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  if(!wUser) return message.reply("Metion a member.");
+  if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("You cannot warn a staff member");
+  let reason = args.join(" ").slice(22);
+
+  if(!warns[wUser.id]) warns[wUser.id] = {
+    warns: 0
+  };
+
+  warns[wUser.id].warns++;
+
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err);
+  });
+
+  let warnEmbed = new Discord.RichEmbed()
+  .setAuthor(message.author.tag , message.author.avatarURL)
+  .setDescription(`\`\`\`\nWarnings: `+ warns[wUser.id].warns + '\nUserID: '+ wUser.id + '\n Reason: '+reason +'```')
+  .setColor("#36393e")
+  .addField('- Username',wUser,true)
+  .addField('- Channel',message.channel,true)
+  .setFooter(new Date());
+
+  let warnchannel = message.guild.channels.find(`name`, "logs");
+  if(!warnchannel) return message.reply("I didn't find the needed channel. make a channel and name it: ``logs`` \n __Or you can change it through the bot file if you are the bot owner__");
+
+  warnchannel.send(warnEmbed);
+
+  if(warns[wUser.id].warns == 2){
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole) return message.guild.createRole({
+        name: "Muted",
+        permissions: 0
+    }).then(role => message.guild.channels.forEach(chan => {
+    message.chan.overwritePermissions(role , {
+       SEND_MESSAGES: false,
+       ADD_REACTIONS: false,
+       READ_MESSAGES_HISTORY: false
+    });
+    }));
+
+    let mutetime = "1h";
+    await(wUser.addRole(muterole.id));
+    message.channel.send(`<@${wUser.id}> has been temporarily muted`);
+
+    setTimeout(function(){
+      wUser.removeRole(muterole.id);
+      message.reply(`<@${wUser.id}> has been unmuted.`);
+    }, ms(mutetime));
+  }
+  if(warns[wUser.id].warns == 3){
+    message.guild.member(wUser).ban(reason);
+    message.reply(`<@${wUser.id}> has been banned.`);
+  }
+}
+});
  client.on('message', message => {
   if (true) {
 if (message.content === 'invite') {
