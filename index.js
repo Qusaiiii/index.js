@@ -27,6 +27,76 @@ client.channels.find('id', '473104410571177986').setName("「 This Server Us");
 client.channels.find('id', '473104410571177986').setName("「 This Server Useing Frix Premium 」");
   }, 3000);
 });
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+    let pages = [`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+:earth_africa: The Public Commands :earth_africa: 
+1༺༻  #color  | Select Color༺༻
+2༺༻  #stats | Shows Bot Info༺༻
+3༺༻  #new | Create New Ticket༺༻
+4༺༻  #close | Close the ticket༺༻
+5༺༻  #gRole RoleName | Show The stats of the role༺༻
+6༺༻  #play | Play music༺༻
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+Click On ▶ To Go Administor Side
+   `
+,`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+:closed_lock_with_key: Administor Coomands:closed_lock_with_key: 
+1༺༻  #clear | Clear The Chat༺༻
+2༺༻  #mute | Msg Everyone In The Server༺༻
+3༺༻  #tempban | Kick With Reson༺༻
+4༺༻  #warn | Ban With Reason༺༻
+4༺༻  #cc Number | Create colors with number like #cc 100 this will create for you 100 color༺༻
+5༺༻ Make Room Called log For Logs༺༻
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+Click On ▶ To Go To Bot Info
+   `,`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+1༺༻  Bot By:ImRoyal_Raddar༺༻
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+   `]
+    let page = 1;
+
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setFooter(`Page ${page} of ${pages.length}`)
+    .setDescription(pages[page-1])
+
+    message.author.sendEmbed(embed).then(msg => {
+
+        msg.react('◀').then( r => {
+            msg.react('▶')
+
+
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+
+
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+
+
+
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+            page++;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        })
+    })
+    }
+}); 
 client.on("message", (message) => {
     
     if (isCommand(message, "new")) {
