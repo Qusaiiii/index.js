@@ -16,11 +16,11 @@ const queue = new Map();
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "muted");
+    let muterole = message.guild.roles.find(`name`, "Muted");
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
-          name: "muted",
+          name: "Muted",
           color: "#000000",
           permissions:[]
         })
@@ -37,7 +37,7 @@ const queue = new Map();
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
-      .setTitle("نشر")
+      .setTitle("Ads")
             .addField(`**لقد تم اسكاتك**` , `**السبب : نشر روابط سيرفرات**`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
