@@ -12242,24 +12242,7 @@ message.member.addRole(message.guild.roles.find("name", "100"));
   }
 	
 });
-client.on('message' , message => {
-    if (message.content.startsWith(prefix + "shutdown")) {
-        if (message.member.roles.some(r=>["「 Bots Manager 」"].includes(r.name)) ) {
-                     message.channel.sendMessage("**:** ***Currently Shutting down...*** ")
-        setTimeout(function() {
-            client.destroy();
-            process.exit(0);
-        }, 2000);
-        } else {
 
-            return message.reply(`I cannot do that for you unfortunately`)
-                .then(message => {
-                    message.delete(10000);
-                }).catch(console.log);
-        }
-       
-    }
-});
   
 client.login('NDczMDYwMjg3MjMxMDMzMzc2.DkDuww.x1km5xCIHtLCAz5VQNRCMTf8dyQ');
 	
