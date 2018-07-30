@@ -165,7 +165,7 @@ const cuttweet = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('لعبه كت تويت' ,
+ .addField('Frix v0.1 | لعبه كت تويت' ,
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
