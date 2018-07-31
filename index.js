@@ -45,41 +45,7 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-client.on('message', async message => {//By Codes , - ST I EdiTeD , .#4968
-  if(message.content.startsWith(prefix + "apply")) {//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-    message.channel.send("**:writing_hand: ماهي الرتبة الي تريدها**").then(e => {
-    let filter = m => m.author.id === message.author.id
-    let lan = '';
-    let md = '';//By Codes , - ST I EdiTeD , .#4968
-    let br = '';//By Codes , - ST I EdiTeD , .#4968
-    let chaLan = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-    .then(collected => {
-      lan = collected.first().content
-      collected.first().delete()
-e.edit(`**:لماذا تريد التقديم على الرتبة**`)
-let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })
-.then(co => {//By Codes , - ST I EdiTeD , .#4968
-  md = co.first().content
-        co.first().delete()//By Codes , - ST I EdiTeD , .#4968
-        e.edit(`**هل لديك خبرة سابقة في هذه الرتبة**`)
-let br = message.channel.awaitMessages(filter, { max: 1, time: 40000, errors: ['time'] })//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-.then(col => {
-  br = col.first().content
-        col.first().delete()
-e.edit("**جاري التقديم علي طلبك...**").then(b => {//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-        setTimeout(() => {
-  b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
-        },2000);
-var gg = message.guild.channels.find('name', 'التقديمات')
-if(!gg) return;//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-if(gg) {
-gg.send({embed : new Discord.RichEmbed()//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-.setDescription(`**الرتبة المرادة : \n ${lan}\n سبب التقديم :\n ${md} \nالخبرة  :\n ${br}  **`)  
-          .setFooter(`Codes.`)//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-.setTimestamp()//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
- 
-});
-  
+
  client.on('message', message => {
     if (message.content.startsWith(prefix + "id")) {
 var args = message.content.split(" ").slice(1);
