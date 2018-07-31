@@ -45,7 +45,7 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-client.on('message', message => {//By Codes , - ST I EdiTeD , .#4968
+client.on('message', async message => {//By Codes , - ST I EdiTeD , .#4968
   if(message.content.startsWith(prefix + "apply")) {//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
     await message.channel.send("**:writing_hand: ماهي الرتبة الي تريدها**").then(e => {
     let filter = m => m.author.id === message.author.id
