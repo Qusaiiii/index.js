@@ -77,11 +77,8 @@ gg.send({embed : new Discord.RichEmbed()//By Codes , - ST I EdiTeD , .#4968//By 
 .setDescription(`**الرتبة المرادة : \n ${lan}\n سبب التقديم :\n ${md} \nالخبرة  :\n ${br}  **`)  
           .setFooter(`Codes.`)//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
 .setTimestamp()//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
-});
-}        
-})
-})
- }//By Codes ,
+}       });
+  
  client.on('message', message => {
     if (message.content.startsWith(prefix + "id")) {
 var args = message.content.split(" ").slice(1);
