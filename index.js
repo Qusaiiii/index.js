@@ -77,7 +77,7 @@ gg.send({embed : new Discord.RichEmbed()//By Codes , - ST I EdiTeD , .#4968//By 
 .setDescription(`**الرتبة المرادة : \n ${lan}\n سبب التقديم :\n ${md} \nالخبرة  :\n ${br}  **`)  
           .setFooter(`Codes.`)//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
 .setTimestamp()//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968//By Codes , - ST I EdiTeD , .#4968
- }
+ 
 });
   
  client.on('message', message => {
