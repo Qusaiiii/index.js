@@ -47,7 +47,7 @@ client.on('message', message => {
 });
 
  client.on('message', message => {
-    if (message.content.startsWith(prefix + "id")) {
+    if (message.content.startsWith("#id")) {
 var args = message.content.split(" ").slice(1);
 let user = message.mentions.users.first();
 var men = message.mentions.users.first();
@@ -170,7 +170,7 @@ var prefix = "#";
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
+if(message.content.split(' ')[0] == '#bc') {
     if (!args[1]) {
 message.channel.send("**#bc <message>**");
 return;
@@ -193,7 +193,7 @@ return;
 client.on('message',function(message) {
   if(!message.channel.guild) return;
 
-    if (message.content === prefix + "discrim") {
+    if (message.content === "#discrim") {
 let messageArray = message.content.split(" ");
 let args = messageArray.slice(1);
 
@@ -337,7 +337,7 @@ if(!message.guild) return
   role: 'Member'
   }
 
-if(message.content.startsWith(prefix + `autorole`)) {
+if(message.content.startsWith(`#autorole`)) {
          if(whitelisted.includes(sender.id)) {
   let perms = message.member.hasPermission(`MANAGE_ROLES`)
 
@@ -383,7 +383,7 @@ Role : __${ar[message.guild.id].role}__`)
 
 })
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+if (message.content.startsWith('#Help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 :earth_africa: The Public Commands :earth_africa: 
@@ -534,7 +534,7 @@ function isCommand(message, cmd) {
 client.on('message', ra3d => {
 var prefix = "#";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
-if(ra3d.content.startsWith(prefix + 'cc')) {
+if(ra3d.content.startsWith('#cc')) {
     if(!args) return ra3d.channel.send('`يرجي اختيار كم لون `');
              if (!ra3d.member.hasPermission('MANAGE_ROLES')) return ra3d.channel.sendMessage('`**⚠ | `[MANAGE_ROLES]` لا يوجد لديك صلاحية**'); 
               ra3d.channel.send(`**✅ |Created __${args}__ Colors**`);
@@ -553,7 +553,7 @@ client.on('message', async message => {
     let Reason = message.content.split(" ").slice(3).join(" ");
     let messageArray = message.content.split(" ");
     let time = messageArray[2];
-    if(message.content.startsWith(prefix + "tempban")) {
+    if(message.content.startsWith("#tempban")) {
        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("**لاتمتلك صلاحيات**");
        if(!User) message.channel.send("**منشن شخص**");
        if(User.id === client.user.id) return message.channel.send("**لاتستطيع حظري**");
@@ -579,7 +579,7 @@ client.on('message', async message => {
 client.on('message', async message => {
     let args = message.content.split(" ");
     let warns = JSON.parse(fs.readFileSync('./warnings.json' , 'utf8'));
-      if(message.content.startsWith(prefix + "warn")) {
+      if(message.content.startsWith("#warn")) {
       if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("No can do pal!");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!wUser) return message.reply("**منشن شخص**");
@@ -666,7 +666,7 @@ client.on('message', message => {
 client.on('message',async message => {
   let args = message.content.split(" ").slice(1).join(" ");
   let role = message.guild.roles.find('name',args) || message.guild.roles.get(args);
-  if(message.content.startsWith(prefix + "gRole")) {
+  if(message.content.startsWith("#gRole")) {
     if(!args) return message.reply('اكتب اسم الرتبة');
     if(!role) return message.reply('هذه الرتبة غير موجودة');
     let iQp = new Discord.RichEmbed()
